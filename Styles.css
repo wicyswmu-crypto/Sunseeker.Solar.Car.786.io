@@ -1,0 +1,363 @@
+:root {
+  --wmu-brown: #4A2E2A;
+  --wmu-gold: #F2B705;
+  --wmu-gold-dark: #C99700;
+  --wmu-light: #F6F7F8;
+}
+
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--wmu-light);
+  color: #222;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease;
+}
+details {
+  margin-top: 0.5rem;
+}
+
+details summary {
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--wmu-brown);
+}
+
+details[open] summary {
+  margin-bottom: 1.2rem;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+}
+
+.hero {
+  padding: 4rem 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--wmu-brown),
+    var(--wmu-gold)
+  );
+  color: white;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 4px solid var(--wmu-gold);
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--wmu-brown);
+}
+
+.navbar a:hover {
+  color: var(--wmu-gold-dark);
+}
+
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+  border-left: 6px solid var(--wmu-gold);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.stat {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  border-top: 4px solid var(--wmu-brown);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.officer-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.officer-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--wmu-brown);
+  border: 2px solid var(--wmu-gold);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+  background: var(--wmu-gold);
+  color: var(--wmu-brown);
+}
+
+
+.social-card .icon {
+  font-size: 2rem;
+}
+
+.role {
+  font-weight: 600;
+  color: var(--wmu-brown);
+  margin: 0.25rem 0;
+}
+
+.desc {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.advisor {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.advisor img {
+  width: 160px;
+  border-radius: 12px;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.role-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 14px;
+  border-left: 6px solid var(--wmu-brown);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.role-card h3 {
+  margin-top: 0;
+  color: var(--wmu-brown);
+}
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.sponsor-grid img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid var(--wmu-gold);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.sponsor-grid img:hover {
+  transform: scale(1.05);
+}
+
+.featured-sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.calendar-event {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.25rem;
+  border-radius: 14px;
+  margin-top: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-left: 6px solid var(--wmu-brown);
+}
+
+.event-date {
+  text-align: center;
+  min-width: 70px;
+}
+
+.event-date .day {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--wmu-brown);
+}
+
+.event-date .month {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--wmu-gold-dark);
+}
+
+.event-info h4 {
+  margin: 0;
+  color: var(--wmu-brown);
+}
+
+.event-info p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.featured-sponsor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  border-radius: 14px;
+  padding: 1.5rem;
+  border-left: 6px solid var(--wmu-gold);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.featured-sponsor:hover {
+  transform: translateY(-4px);
+}
+
+.featured-sponsor img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.featured-sponsor .sponsor-info h3 {
+  margin: 0.5rem 0;
+  color: var(--wmu-brown);
+}
+
+.featured-sponsor .sponsor-info a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--wmu-gold-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.featured-sponsor .sponsor-info a:hover {
+  text-decoration: underline;
+}
+.cta-section {
+  text-align: center;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cta-card {
+  display: block;
+  background: white;
+  padding: 1.75rem;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  border-top: 6px solid var(--wmu-brown);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
+.cta-card h3 {
+  margin-top: 0;
+  color: var(--wmu-brown);
+}
+.who-image img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.cta-card p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--wmu-brown);
+  color: white;
+}

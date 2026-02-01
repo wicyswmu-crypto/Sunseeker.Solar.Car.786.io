@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gallery | WMU Sunseeker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="team.html">Team</a>
+  <a href="sponsors.html">Sponsors</a>
+</nav>
+
+<main class="container">
+  <h2>Project Gallery</h2>
+
+  <!-- Drag & Drop Upload Area (temporary preview only) -->
+  <div id="dropZone" class="card">
+    <strong>Are we missing photos?</strong>
+    <p>Email us photos a ---------@gmail.com!</p>
+  </div>
+
+  <!-- Temporary Preview Grid -->
+  <div id="galleryGrid" class="gallery-grid"></div>
+
+  <!-- PERMANENT GALLERY SECTIONS -->
+
+  <section class="card">
+    <details open>
+      <summary><strong>Build Season</strong></summary>
+      <div class="gallery-grid">
+        <img src="images/gallery/build/build1.jpg" alt="Build Season">
+        <img src="images/gallery/build/build2.jpg" alt="Build Season">
+        <img src="images/gallery/build/build3.jpg" alt="Build Season">
+      </div>
+    </details>
+  </section>
+
+  <section class="card">
+    <details>
+      <summary><strong>Competition Events</strong></summary>
+      <div class="gallery-grid">
+        <img src="images/gallery/competition/comp1.jpg" alt="Competition">
+        <img src="images/gallery/competition/comp2.jpg" alt="Competition">
+        <img src="images/gallery/competition/comp3.jpg" alt="Competition">
+      </div>
+    </details>
+  </section>
+
+  <section class="card">
+    <details>
+      <summary><strong>Outreach & Community</strong></summary>
+      <div class="gallery-grid">
+        <img src="images/gallery/outreach/Green.jpg" alt="Outreach">
+        <img src="images/gallery/outreach/SunRight.jpg" alt="Outreach">
+        <img src="images/gallery/outreach/SunLeft.jpg" alt="Outreach">
+        <img src="images/gallery/outreach/Red.jpg" alt="Outreach">
+        <img src="images/gallery/outreach/Pickle....jpg" alt="Outreach">
+      </div>
+    </details>
+  </section>
+
+ <section class="card">
+    <details open>
+      <summary><strong>Travel</strong></summary>
+      <div class="gallery-grid">
+        <img src="images/gallery/Travel/150.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Black.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Blue.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Bridge.jpg" alt="Travel">
+        <img src="images/gallery/Travel/VAN.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Buckies.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Clouds.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Clouds2.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Clouds3.jpg" alt="Travel">
+        <img src="images/gallery/Travel/Clouds4.jpg" alt="Travel">
+        <img src="images/gallery/Travel/CRed.jpg" alt="Travel">
+      </div>
+    </details>
+  </section>
+</main>
+
+<script>
+  const dropZone = document.getElementById("dropZone");
+  const grid = document.getElementById("galleryGrid");
+
+  dropZone.addEventListener("dragover", e => {
+    e.preventDefault();
+    dropZone.style.border = "2px dashed #666";
+  });
+
+  dropZone.addEventListener("dragleave", () => {
+    dropZone.style.border = "none";
+  });
+
+  dropZone.addEventListener("drop", e => {
+    e.preventDefault();
+    dropZone.style.border = "none";
+
+    [...e.dataTransfer.files].forEach(file => {
+      if (!file.type.startsWith("image/")) return;
+
+      const img = document.createElement("img");
+      img.src = URL.createObjectURL(file);
+      img.loading = "lazy";
+      grid.appendChild(img);
+    });
+  });
+</script>
+
+</body>
+</html>
+
