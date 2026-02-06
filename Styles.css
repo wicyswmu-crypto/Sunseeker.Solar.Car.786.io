@@ -5,77 +5,15 @@
   --wmu-light: #F6F7F8;
 }
 
-
+/* =====================
+   Base Styles
+===================== */
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
   background: var(--wmu-light);
   color: #222;
 }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  transition: transform 0.2s ease;
-}
-details {
-  margin-top: 0.5rem;
-}
-
-details summary {
-  cursor: pointer;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: var(--wmu-brown);
-}
-
-details[open] summary {
-  margin-bottom: 1.2rem;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.04);
-}
-
-.hero {
-  padding: 4rem 1rem;
-  background: linear-gradient(
-    135deg,
-    var(--wmu-brown),
-    var(--wmu-gold)
-  );
-  color: white;
-  text-align: center;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-  background: white;
-  border-bottom: 4px solid var(--wmu-gold);
-}
-
-.navbar a {
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--wmu-brown);
-}
-
-.navbar a:hover {
-  color: var(--wmu-gold-dark);
-}
-
 
 .container {
   max-width: 1100px;
@@ -83,6 +21,86 @@ details[open] summary {
   padding: 2rem;
 }
 
+/* =====================
+   Hero / Header
+===================== */
+.hero {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, var(--wmu-brown), var(--wmu-gold));
+  color: white;
+  text-align: center;
+}
+
+.hero-bar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-left img { height: 65px; }
+.hero-right img {
+  height: 195px;   /* BIG header logo */
+  width: auto;
+}
+
+.hero-center h1 { margin: 0; }
+.hero-center p { margin-top: 8px; font-size: 0.95rem; }
+
+/* =====================
+   Navigation
+===================== */
+/* NAVBAR */
+.navbar {
+  background: white;
+  border-bottom: 4px solid var(--wmu-gold);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--wmu-brown);
+  padding: 0.4rem 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--wmu-gold-dark);
+  border-bottom-color: var(--wmu-gold);
+}
+
+.nav-logo img {
+  height: 58px;   /* bigger but still balanced */
+  width: auto;
+}
+.nav-inner {
+  padding: 1rem 1.5rem;
+}
+
+
+
+
+/* =====================
+   Cards & Sections
+===================== */
 .card {
   background: white;
   padding: 2rem;
@@ -95,11 +113,46 @@ details[open] summary {
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
-  font-weight: 600;
   text-align: center;
+  font-weight: 600;
   border-top: 4px solid var(--wmu-brown);
 }
+.who-image {
+  margin-top: 1.5rem;
+  text-align: center;
+}
 
+.who-image img {
+  width: 100%;
+  height: auto;          /* KEY: preserves aspect ratio */
+  max-width: 100%;
+  max-height: 500px;     /* optional: prevents absurdly tall images */
+  object-fit: cover;   /* ensures full image is visible */
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+/* =====================
+   Section Spacing
+===================== */
+section {
+  margin: 2rem 0;
+}
+
+/* Optional divider line */
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--wmu-gold);
+  margin: 3rem auto;
+  border-radius: 2px;
+}
+
+
+/* =====================
+   Team
+===================== */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -118,77 +171,10 @@ details[open] summary {
   border-radius: 12px;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-}
-
-.image-grid img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.social-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 14px;
-  text-decoration: none;
-  color: var(--wmu-brown);
-  border: 2px solid var(--wmu-gold);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.social-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-  background: var(--wmu-gold);
-  color: var(--wmu-brown);
-}
-
-
-.social-card .icon {
-  font-size: 2rem;
-}
-
-.role {
-  font-weight: 600;
-  color: var(--wmu-brown);
-  margin: 0.25rem 0;
-}
-
-.desc {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.advisor {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.advisor img {
-  width: 160px;
-  border-radius: 12px;
-}
-
 .roles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin-top: 1.5rem;
 }
 
 .role-card {
@@ -199,15 +185,44 @@ details[open] summary {
   box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
 
-.role-card h3 {
-  margin-top: 0;
+.role-card h3 { margin-top: 0; color: var(--wmu-brown); }
+
+/* =====================
+   Gallery
+===================== */
+.gallery-grid,
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img,
+.image-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease;
+}
+
+.gallery-grid img:hover { transform: scale(1.04); }
+
+details summary {
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
   color: var(--wmu-brown);
 }
+
+/* =====================
+   Sponsors
+===================== */
 .sponsor-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
 .sponsor-grid img {
@@ -219,145 +234,106 @@ details[open] summary {
   border-radius: 12px;
   border: 2px solid var(--wmu-gold);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
-}
-
-.sponsor-grid img:hover {
-  transform: scale(1.05);
-}
-
-.featured-sponsors-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 1rem;
-}
-.calendar-event {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: white;
-  padding: 1.25rem;
-  border-radius: 14px;
-  margin-top: 1rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  border-left: 6px solid var(--wmu-brown);
-}
-
-.event-date {
-  text-align: center;
-  min-width: 70px;
-}
-
-.event-date .day {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--wmu-brown);
-}
-
-.event-date .month {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: var(--wmu-gold-dark);
-}
-
-.event-info h4 {
-  margin: 0;
-  color: var(--wmu-brown);
-}
-
-.event-info p {
-  margin: 0.25rem 0;
-  font-size: 0.95rem;
 }
 
 .featured-sponsor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   background: white;
-  border-radius: 14px;
   padding: 1.5rem;
+  border-radius: 14px;
   border-left: 6px solid var(--wmu-gold);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
 }
 
-.featured-sponsor:hover {
-  transform: translateY(-4px);
-}
-
-.featured-sponsor img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-}
-
-.featured-sponsor .sponsor-info h3 {
-  margin: 0.5rem 0;
-  color: var(--wmu-brown);
-}
-
-.featured-sponsor .sponsor-info a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: var(--wmu-gold-dark);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.featured-sponsor .sponsor-info a:hover {
-  text-decoration: underline;
-}
-.cta-section {
-  text-align: center;
-}
-
+/* =====================
+   Social / CTA
+===================== */
+.social-grid,
 .cta-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
-  margin-top: 1.5rem;
 }
 
+.social-card,
 .cta-card {
-  display: block;
   background: white;
   padding: 1.75rem;
   border-radius: 14px;
   text-decoration: none;
   color: inherit;
-  border-top: 6px solid var(--wmu-brown);
   box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cta-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+.social-card { display: flex; align-items: center; gap: 1rem; }
+
+/* =====================
+   Calendar
+===================== */
+.calendar-event {
+  display: flex;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.25rem;
+  border-radius: 14px;
+  border-left: 6px solid var(--wmu-brown);
 }
 
-.cta-card h3 {
-  margin-top: 0;
-  color: var(--wmu-brown);
-}
-.who-image img {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-
-.cta-card p {
-  margin-bottom: 0;
-  font-size: 0.95rem;
-}
-
+/* =====================
+   Footer
+===================== */
 footer {
   text-align: center;
   padding: 2rem;
   background: var(--wmu-brown);
   color: white;
+}
+
+/* HOME PAGE NAVBAR ONLY */
+.home-navbar .nav-inner {
+  justify-content: center;
+}
+
+.home-navbar .nav-links {
+  justify-content: center;
+}
+
+.when-we-meet h2 {
+  margin-bottom: 0.5rem;
+}
+
+.meeting-intro {
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.meeting-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.meeting-item {
+  background: white;
+  padding: 1.25rem;
+  border-radius: 14px;
+  border-left: 5px solid var(--wmu-gold);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.meeting-item h4 {
+  margin: 0 0 0.4rem 0;
+  color: var(--wmu-brown);
+}
+
+.meeting-item p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.meeting-item span {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #555;
 }
