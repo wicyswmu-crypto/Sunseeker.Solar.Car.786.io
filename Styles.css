@@ -159,16 +159,35 @@ section {
   gap: 2rem;
 }
 
-.officer-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 16px;
-  text-align: center;
-}
-
 .officer-card img {
   width: 100%;
+  height: 340px;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 12px;
+}
+.officer-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;          /* Keeps image corners rounded */
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.officer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+.officer-card h3 {
+  margin: 1rem 0 0.25rem;
+  color: var(--wmu-brown);
+}
+
+.officer-card p {
+  margin: 0 0 1.25rem;
+  color: #666;
 }
 
 .roles-grid {
